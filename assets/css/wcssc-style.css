@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 30, 2018, 9:44:45 PM
+    Author     : ankit
+*/
+#wcssc-share-box { background: white; box-shadow: 4px 3px 4px 3px #a8a4a4; display: none; }
+#wcssc-share-box-inner { display: flex; flex-flow: row wrap; margin: 0; padding: 0; position: relative; }
+.wcssc-icon-holder { display: inline-block; font-size: 2.3em; text-align: center; width: 33%; margin-bottom: 15px; }
+    .wcssc-icon-holder a { outline: none; }
+    .wcssc-icon-holder span { display: block; font-size: 0.399em; }
+    #wcssc-share-box-inner .sharebox-div { margin-top: 10px; }
+        #wcssc-share-box-inner .sharebox-div:first-child { margin-top: 10px; }
+.wcssc-dialog-back { position: absolute; bottom: 0; right: 0; text-decoration: none; }
+#wcssc-saved-cart-table th, #wcssc-saved-cart-table td { border: 1px solid #999999; text-align: center; }
+
+/*Saved cart page */
+#wcssc-saved-cart-share .wcssc-icon-holder { font-size: 1.9em; width: auto; padding: 0 0.2em; }
+.wcssc-share-load { display: flex; }
+	.wcssc-share, .wcssc-load { width: 50%; }
+	.wcssc-share ul { display: flex; flex-wrap: wrap; align-items: center; width: 100%; }
+	.wcssc-load { display: flex; flex-flow: row-reverse wrap; }
+
+.wcssc-msg.success { background: #d7f4d7; border: 1px solid #CCC; border-radius: 5px; padding: 0.1em 0.3em; margin: 10px 0; }
