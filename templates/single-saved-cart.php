@@ -97,7 +97,7 @@
 			<?php if( !empty($wcssc->configuration['wcssc_sm_fb']) && 'yes' == $wcssc->configuration['wcssc_sm_fb'] ){?>
 				<li class="wcssc-icon-holder">
 					<a target="_blank" href="<?php echo wcssc_social_media_url( 'facebook', $cart_link ); ?>">
-						<i class="fa fa-facebook"></i>
+						<i class="fab fa-facebook"></i>
 					</a>
 				</li>
 			<?php } ?>
@@ -105,7 +105,7 @@
 			<?php if( !empty($wcssc->configuration['wcssc_sm_tw']) && 'yes' == $wcssc->configuration['wcssc_sm_tw'] ){?>
 				<li class="wcssc-icon-holder">
 					<a target="_blank" href="<?php echo wcssc_social_media_url( 'twitter', $cart_link ); ?>">
-						<i class="fa fa-twitter"></i>
+						<i class="fab fa-twitter"></i>
 					</a>
 				</li><?php
 			} ?>
@@ -113,7 +113,7 @@
 			<?php if( !empty($wcssc->configuration['wcssc_sm_wp']) && 'yes' == $wcssc->configuration['wcssc_sm_wp'] ){?>
 				<li class="wcssc-icon-holder">
 					<a target="_blank" href="<?php echo wcssc_social_media_url( 'whatsapp', $cart_link ); ?>">
-						<i class="fa fa-whatsapp"></i>
+						<i class="fab fa-whatsapp"></i>
 					</a>
 				</li><?php
 			} ?>
@@ -121,7 +121,7 @@
 			<?php if( !empty($wcssc->configuration['wcssc_sm_skype']) && 'yes' == $wcssc->configuration['wcssc_sm_skype'] ){?>
 				<li class="wcssc-icon-holder">
 					<a target="_blank" href="<?php echo wcssc_social_media_url( 'skype', $cart_link ); ?>">
-						<i class="fa fa-skype"></i>
+						<i class="fab fa-skype"></i>
 					</a>
 				</li><?php
 			} ?>

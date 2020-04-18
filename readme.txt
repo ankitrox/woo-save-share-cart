@@ -4,7 +4,7 @@ Donate link: http://sharethingz.com
 Tags: woocommerce, cart, share, social, facebook, google, twitter, e-commerce, save
 Requires at least: 4.5.0
 Tested up to: 5.3.2
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,13 @@ Activate it through the 'Plugins' section.
 5. Share cart pop-up.
 
 == Changelog ==
+
+= 1.0.6 =
+* Fix: Icon breaking on single saved cart page.
+
+= 1.0.5 =
+* Update: Fontawesome to version 5.x
+* Fix: Fix icon classes.
 
 = 1.0.4 =
 * Fix: Ajax loader displaying on non-wc pages.
