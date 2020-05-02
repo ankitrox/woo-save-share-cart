@@ -98,7 +98,7 @@ if( !class_exists('WCSSC_AJAX') ){
 	                <?php if( !empty($wcssc->configuration['wcssc_sm_save']) && 'yes' == $wcssc->configuration['wcssc_sm_save'] && is_user_logged_in() ){?>
                         <li class="wcssc-icon-holder">
                             <a id="wcssc-save" target="_blank" href="#">
-                                <i class="fba fa-save"></i>
+                                <i class="fas fa-save"></i>
                                 <span><?php _e( 'Save', 'wcssc' ); ?></span>
                             </a>
                         </li><?php
