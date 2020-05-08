@@ -41,6 +41,11 @@ Activate it through the 'Plugins' section.
 
 == Changelog ==
 
+= 1.0.7 =
+* Hook: `wcssc_cart_saved` added in save_cart function.
+* JS: `sharebox_updated` event added for modal update.
+* Feature: Total quantity and Total price in cart template.
+
 = 1.0.6 =
 * Fix: Icon breaking on single saved cart page.
 

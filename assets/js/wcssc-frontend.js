@@ -58,6 +58,7 @@ jQuery(document).ready(function(){
             
             jQuery.post( wcssc_vars.ajaxurl, { action : 'wcssc_generate_save_html' }, function( response ){
                 jQuery(wcssc_share.sharebox_div).html(response).dialog({modal:true}).dialog('open');
+                jQuery( document.body ).trigger( 'sharebox_updated' );
             });
         }
     };

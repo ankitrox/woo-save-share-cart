@@ -260,6 +260,8 @@ if( !class_exists('WCSSC_AJAX') ){
 
 		    update_post_meta( $saved_cart[0]->ID, 'wcssc_has_title', 1 );
 
+		    do_action( 'wcssc_cart_saved', $data, $saved_cart[0]->ID );
+
 		    if ( empty( $update ) || ! is_wp_error( $update ) ) {
 			    $response['msg'] = '<p style="text-align: center;">' . __( 'Cart saved successfully.', 'wcssc' ) . '</p>';
 		    }

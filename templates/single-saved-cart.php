@@ -10,7 +10,9 @@
 	</thead>
 
 	<tbody>
-		<?php foreach( $cart as $cart_item_key => $cart_item ){
+		<?php
+            $total_quantity = $total_price = 0;
+            foreach( $cart as $cart_item_key => $cart_item ){
 
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -68,19 +70,36 @@
 							$product_quantity = $cart_item['quantity'];
 						}
 
+						$total_quantity = $total_quantity + $product_quantity;
+
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
 						</td>
 
 						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
+								$subtotal = apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+							    echo $subtotal;
+
+                                $product_price = 0;
+                                if (  WC()->cart->display_prices_including_tax() ) {
+                                    $product_price = wc_get_price_including_tax( $_product );
+                                } else {
+                                    $product_price = wc_get_price_excluding_tax( $_product );
+                                }
+
+							    $total_price = $total_price + $product_price;
+                            ?>
 						</td>
 
 					</tr><?php
 				}
 		} ?>
+    <tr>
+        <td colspan="3"></td>
+        <td ><?php echo sprintf( __( 'Total Quantity: %d' ), $total_quantity ) ?></td>
+        <td ><?php echo sprintf( __( 'Total Price: %s' ), wc_price( $total_price ) ) ?></td>
+    </tr>
 	</tbody>
 </table>
 

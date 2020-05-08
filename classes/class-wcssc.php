@@ -13,7 +13,7 @@ if( !class_exists('WCSSC') ){
         /*
          * Version of plugin
          */
-        public $version = '1.0.6';
+        public $version = '1.0.7';
 
         /*
          * Plugin settings array
