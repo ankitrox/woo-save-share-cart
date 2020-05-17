@@ -4,7 +4,7 @@ Donate link: http://sharethingz.com
 Tags: woocommerce, cart, share, social, facebook, google, twitter, e-commerce, save
 Requires at least: 4.5.0
 Tested up to: 5.3.2
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GPLv2 or later (of course!)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

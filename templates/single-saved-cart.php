@@ -88,7 +88,7 @@
                                     $product_price = wc_get_price_excluding_tax( $_product );
                                 }
 
-							    $total_price = $total_price + $product_price;
+							    $total_price = $total_price +  ( $product_price * $product_quantity );
                             ?>
 						</td>
 
