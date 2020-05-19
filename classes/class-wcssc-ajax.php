@@ -163,36 +163,20 @@ if( !class_exists('WCSSC_AJAX') ){
 				'msg' => __( 'Email sent successfully.', 'wcssc' )
 			);
 
-            $to			= $data['wcssc_mailto'];
-            $subject	= !empty($data['wcssc_subject']) ? $data['wcssc_subject'] : ( !empty($wcssc->configuration['wcssc_email_subject']) ? $wcssc->configuration['wcssc_email_subject'] : __('Check this cart', 'wcssc') );
-            $body		= !empty($data['wcssc_body']) ? $data['wcssc_body'] : ( !empty($wcssc->configuration['wcssc_email_body']) ? $wcssc->configuration['wcssc_email_body'] : sprintf( __( 'Check this cart: %s', 'wcssc' ),  $wcssc_saved_cart->get_cart_link() ) );
+	        $to                  = $data['wcssc_mailto'];
+	        $subject             = ! empty( $data['wcssc_subject'] ) ? $data['wcssc_subject'] : ( ! empty( $wcssc->configuration['wcssc_email_subject'] ) ? $wcssc->configuration['wcssc_email_subject'] : __( 'Check this cart', 'wcssc' ) );
+	        $body                = ! empty( $data['wcssc_body'] ) ? $data['wcssc_body'] : ( ! empty( $wcssc->configuration['wcssc_email_body'] ) ? $wcssc->configuration['wcssc_email_body'] : sprintf( __( 'Check this cart: %s', 'wcssc' ), $wcssc_saved_cart->get_cart_link() ) );
+	        $from_email          = ! empty( $wcssc->configuration['wcssc_email_from'] ) ? $wcssc->configuration['wcssc_email_from'] : get_bloginfo( 'name' );
+	        $from_name           = ! empty( $wcssc->configuration['wcssc_email_from_name'] ) ? $wcssc->configuration['wcssc_email_from_name'] : '';
+	        $filtered_email_body = apply_filters( 'wcssc_email_body', $body );
+	        $headers = '';
 
-			//Change From Email Address
-			apply_filters( 'wp_mail_from', function( $email ){
-				            
-				$from_email	= !empty($wcssc->configuration['wcssc_email_from']) ? $wcssc->configuration['wcssc_email_from'] : '';
-				if( !empty($from_email) )
-					$email = $from_email;
-				
-				return $email;
+	        if( ! empty( $from_email ) ) {
+		        $headers .= 'From: ' . $from_name . ' <' . $from_email . "> \r\n".
+		        'Reply-To: ' . $from_email . "\r\n" ;
+            }
 
-			});
-
-			//Change From Email Name
-			apply_filters( 'wp_mail_from_name', function( $name ){
-				            
-				$from_name	= !empty($wcssc->configuration['wcssc_email_from_name']) ? $wcssc->configuration['wcssc_email_from_name'] : '';
-				if( !empty($from_name) )
-					$name = $from_email;
-
-				return $name;
-
-			});
-
-			//Useful for sending newsletters
-			$filtered_email_body	= apply_filters( 'wcssc_email_body', $body );
-
-			$mail_sent = wp_mail( $to, $subject, $filtered_email_body );
+	        $mail_sent           = wp_mail( $to, $subject, $filtered_email_body, $headers );
 
 			if(!$mail_sent){
 
